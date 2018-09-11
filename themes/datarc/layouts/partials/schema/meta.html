@@ -1,0 +1,25 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+{{ with .Site.Params.contact }}<meta name="contact" content="{{ . }}">{{ end }}
+<meta name="description" content="{{ replaceRE "\n" "" (.Description | default .Summary) | truncate 160 }}">
+
+<meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:image" content="{{ .Params.thumbnail | default "img/default.jpg" | absURL }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:description" content="{{ replaceRE "\n" "" (.Description | default .Summary) | truncate 160 }}">
+<meta property="og:locale" content="id_ID">
+<meta property="fb:pages" content="818297154978122" />
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="{{ .Site.Title }}">
+<meta name="twitter:url" content="{{ .Permalink }}">
+<meta name="twitter:title" content="{{ .Title }} - {{ .Site.Title }}">
+<meta name="twitter:description" content="{{ replaceRE "\n" "" (.Description | default .Summary) | truncate 160 }}">
+<meta name="twitter:image" content="{{ .Params.thumbnail | default "img/default.jpg" | absURL }}">
+
+{{ range .AlternativeOutputFormats }}
+<link rel="{{ .Rel }}" href="{{ .Permalink | safeURL }}">
+{{ end }}

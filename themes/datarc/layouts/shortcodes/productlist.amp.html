@@ -1,0 +1,16 @@
+<br /><br />
+<div class="col-md-8">
+   <div class="card bg-primary mb-3 shadow-sm">
+       <amp-img src="{{ .Get "img"}}" alt="{{ .Get "title" }}" width="100" height="70" layout="responsive"></amp-img>
+      <div class="card-body">
+         <h3 class="card-title"><a href="{{ .Get "link" }}">{{ .Get "title" }}</a></h3>
+         <p class="card-text">
+           {{ .Inner }}
+         </p>
+      </div>
+   </div>
+</div>
+
+
+
+         

@@ -1,0 +1,46 @@
+{{ partial "head.html" . }}
+{{ partial "header.html" . }}
+	
+<section id="blog" class="title-bg section-full">
+   <div class="container">
+      <div class="row justify-content-center">
+         <div class="col-lg-8">
+            <div class="product-area-title text-center">
+               <h1 class="text-white">Reviews "{{ .Title }}" </h1>
+               {{ range .Params.tags }}
+               <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="badge badge-info"> # {{ . }}</a> </li>
+               {{ end }}
+               
+            </div>
+         </div>
+      </div>
+   </div>
+</section>	
+        
+<section class="section-full gray-bg">
+   <div class="container">
+            
+      <div class="row">
+         {{ range .Pages }}
+         <div class="col-md-4">
+            <figure class="signle-service">
+               <figcaption class="text-center">
+                  <h2 class="h3"><a href="{{.Permalink}}">{{.Title}}</a></h5>
+                  <p class="text-uppercase">{{ .Lastmod.Format ( .Site.Params.dateformat | default "Jan 2, 2006") }} | {{ if isset .Params "author" }} {{ $author := index .Site.Data.authors .Params.author }} <i class="fa fa-user"></i> {{ $author.name }} {{ else }} <i class="fa fa-user"></i> Unknown {{ end }}</p>
+                  <p>{{ .Summary | truncate 250 }}</p>
+                  <a href="{{ .Permalink }}" class="primary-btn d-inline-flex align-items-center">Continue Reading<span class="lnr lnr-arrow-right"></span></a>
+               </figcaption>
+            </figure>
+         </div>
+         {{ end }}
+      </div>
+      
+   </div>
+</section>
+
+<div class="section-title text-center gray-bg">
+          {{ partial "pagination.html" . }}	
+</div>
+
+
+{{ partial "footer.html" . }}

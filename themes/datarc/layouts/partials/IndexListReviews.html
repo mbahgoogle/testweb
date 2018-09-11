@@ -1,0 +1,20 @@
+<div class="col-lg-3 col-md-12">
+ <div class="single-publish">
+    <div class="top">
+       <div class="mb-15 d-flex">
+          <a href="#">{{ .Lastmod.Format ( .Site.Params.dateformat | default "Jan 2, 2006") }}</a>
+          <span class="line">|</span>
+          <a href="#"> {{ if isset .Params "author" }}
+           {{ $author := index .Site.Data.authors .Params.author }}
+            {{ $author.name }}
+           {{ else }}
+            Unknown
+           {{ end }}
+          </a>
+       </div>
+       <h2 class="h4"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    </div>
+    <p class="mb-30">{{.Summary | truncate 200 }} </p>
+    <a href="{{ .Permalink }}" class="details-btn d-flex justify-content-center align-items-center"><span class="details">Details</span><span class="lnr lnr-arrow-right"></span></a>
+ </div>
+ </div>

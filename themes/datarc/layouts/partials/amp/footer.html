@@ -1,0 +1,131 @@
+<footer>
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-3 col-md-3">
+            <a class="footer-brand" href="index.html">{{.Site.Params.f_title_1}}</a>
+            <p>{{.Site.Params.f_content_1 | markdownify }}</p>
+            <ul class="list-inline list-unstyled social-networks">
+              <li>
+                <a href="#">
+                  <div class="icon-social icon-social-facebook normal">
+                    <i class="fa fa-facebook"></i>
+                  </div>
+                  <div class="icon-social hover">
+                    <i class="fa fa-facebook"></i>
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <div class="icon-social icon-social-twitter normal">
+                    <i class="fa fa-twitter"></i>
+                  </div>
+                  <div class="icon-social hover">
+                    <i class="fa fa-twitter"></i>
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <div class="icon-social icon-social-google-plus normal">
+                    <i class="fa fa-google-plus"></i>
+                  </div>
+                  <div class="icon-social hover">
+                    <i class="fa fa-google-plus"></i>
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <div class="icon-social icon-social-youtube normal">
+                    <i class="fa fa-youtube-play"></i>
+                  </div>
+                  <div class="icon-social hover">
+                    <i class="fa fa-youtube-play"></i>
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <div class="icon-social icon-social-linkedin normal">
+                    <i class="fa fa-linkedin"></i>
+                  </div>
+                  <div class="icon-social hover">
+                    <i class="fa fa-linkedin"></i>
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <div class="icon-social icon-social-pinterest normal">
+                    <i class="fa fa-pinterest"></i>
+                  </div>
+                  <div class="icon-social hover">
+                    <i class="fa fa-pinterest"></i>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-3">
+            <h3>CONTACT</h3>
+            <address>
+              <i class="fa fa-map-marker"></i> {{.Site.Params.f_address | markdownify }}<br>
+              <i class="fa fa-phone"></i> {{.Site.Params.f_nope | markdownify }}<br>
+              <i class="fa fa-envelope"></i> {{.Site.Params.f_mail | markdownify }}
+            </address>
+          </div>
+          
+          <div class="col-lg-3 col-md-3">
+            <h3>LATEST ARTICLES</h3>
+			 <ul class="latest-tweets">
+			 {{ range first 3 (where .Site.Pages "Section" "posts") }}
+             <li><a href="{{ .Permalink }}">{{ .Title }}</a><br />
+			 <span class="meta">{{ .Date.Format "Mon, Jan 2, 2006" }}</span></li>
+             {{ end }}
+			 </ul>
+            <!--
+			{{ range $taxonomy := .Site.Taxonomies.categories }}
+            
+            <ul class="latest-tweets">
+                {{ range $taxonomy.Pages }}
+                <li hugo-nav="{{ .RelPermalink}}"><a href="{{ .Permalink}}"> {{ .LinkTitle }} </a> 
+		    	<div class="meta">{{ .Date.Format "Jan 2, 2006" }}</div>
+		    	</li>
+                {{ end }}
+            </ul>
+            {{ end }}-->
+		  
+       
+			
+          </div>
+
+          <div class="col-lg-3 col-md-3">
+            <h3>NEWSLETTER</h3>
+            <p>Type your email address below and subscribe to our newsletter</p>
+            <div class="input-group">
+              <input type="text" placeholder="Email" class="form-control">
+              <span class="input-group-btn">
+                <button class="btn btn-primary" type="button">Go!</button>
+              </span>
+            </div><!-- /input-group -->
+          </div>
+        </div><!-- /.row -->
+
+      </div><!-- /.container -->
+    </footer>
+
+<div class="footer-after">
+  <div class="container">
+    <div class="row">
+      <p class="col-md-10">{{.Site.Title}} © {{now.Format "2006"}} {{ with .Site.Copyright }}{{ . | markdownify}}{{ end }}</p>
+      <p class="col-md-2 legal"><a href="/disclaimer/">Disclaimer</a></p>
+    </div><!-- /.row -->
+  </div>
+</div>

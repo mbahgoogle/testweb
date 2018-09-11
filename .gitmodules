@@ -1,0 +1,3 @@
+[submodule "themes/datarc"]
+	path = themes/datarc
+	url = https://github.com/mbahgoogle/datarc.git

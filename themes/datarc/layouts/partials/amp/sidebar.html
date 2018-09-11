@@ -1,0 +1,56 @@
+<aside><!-- .aside -->
+       
+    <div class="recent_post">
+     <h3>Recent Posts</h3>
+	 <ul>
+	 
+       
+			 {{ $related := .Site.RegularPages.Related . | first 20 }}
+             {{ with $related }}
+             
+             {{ range . }}
+             <li><a href="{{ .Permalink }}"><h2>{{ .Title }}</h2></a><br />
+			 <span class="meta">{{ .Date.Format "Jan 2, 2006" }}</span></li>
+             <p>{{ .Summary }}</p>
+             {{ end }}
+             {{ end }}
+			
+		 
+		 
+		 
+       </ul>
+      </div>
+    
+    <div class="well">
+      <h4>Categories</h4>
+    
+      {{ if not (eq (len .Site.Taxonomies.categories) 0) }}
+         
+       {{ with .Site.Data.l10n.widgets.categories.title }}{{.}}{{end}}
+         <ul>
+         {{ range $name, $items := .Site.Taxonomies.categories }}
+         <li>
+         <a href="{{ $.Site.BaseURL }}categories/{{ $name | urlize | lower }}">
+         # {{ $name }} <strong>({{ len $items }})</strong>
+         </a>
+         </li>
+         {{ end }}
+         </ul>
+        {{ end }}
+    
+    </div><!-- /.well -->
+    
+    <div class="well">
+      <h3>Tags</h3>
+      <div class="tags">
+      <nav>
+      <ul>
+      {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+        <li><a href="/tags/{{ $name | urlize }}">{{ $name | humanize }} ({{ $taxonomy.Count }})</a></li>
+      {{end}}
+      </ul>
+      </nav>
+      </div><!-- /tags -->
+    </div><!-- /.well -->
+    
+ </aside><!-- /.aside -->

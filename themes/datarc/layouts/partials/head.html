@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "id" }}">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>{{ .Title }}</title>
+	{{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
+	{{ with .Params.description }}<meta name="description" content="{{ . | truncate 160 }}">{{ end }}
+	{{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+	{{ if .RSSLink -}}<link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}">{{- end }}
+    {{ partial "schema/meta" . }}
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,500,600" rel="stylesheet">
+    <!--
+    CSS
+    ============================================= -->
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/linearicons.css">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/owl.carousel.css">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/animate.css">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/bootstrap.css">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css">
+
+    
+     <style>
+     .post {
+         font-size:20px;
+         margin:30px 0 30px 0;
+         color:#232222;
+         font-family: 'Roboto', sans-serif;
+         line-height: 31px;
+         line-height: 1.9375rem;
+     }
+     .img-fluid {
+         width: 100%;
+         height: auto;
+     }
+     
+     </style>
+     
+     
+     
+</head>
+<body itemscope itemtype="http://schema.org/WebPage">

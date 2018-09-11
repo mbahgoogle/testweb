@@ -1,0 +1,41 @@
+{{ partial "head.html" . }}
+{{ partial "header.html" . }}
+
+<section id="blog" class="title-bg section-full">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="product-area-title text-center">
+                    <p class="text-uppercase text-white">{{ .Lastmod.Format ( .Site.Params.dateformat | default "Jan 2, 2006") }} | {{ if isset .Params "author" }} {{ $author := index .Site.Data.authors .Params.author }} <i class="fa fa-user"></i> {{ $author.name }} {{ else }} <i class="fa fa-user"></i> Unknown {{ end }}</p>
+                    <h1 class="text-white">{{ .Title }} </h1> {{ range .Params.tags }}
+                    <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="badge badge-info"> # {{ . }}</a> </li>
+                    {{ end }}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<main>
+    <article class="post">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    {{ .Content }}
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-normal">Informasi Pengiklan</h4>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </article>
+</main>
+
+{{ partial "sidebar.html" . }}
+{{ partial "footer.html" . }}
+{{ partial "schema/Article.html" . }}
+</html>
