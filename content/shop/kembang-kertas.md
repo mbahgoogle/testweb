@@ -11,7 +11,7 @@ tags = [
 ]
 date = "2018-08-20"
 categories = [
-    "Laptop"
+    "Madu"
 ]
 author = "yanti"
 thumbnail = "https://cdn.thewirecutter.com/wp-content/uploads/2017/04/chromebooks-lowres-9433-330x220.jpg"

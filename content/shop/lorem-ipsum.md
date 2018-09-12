@@ -12,7 +12,7 @@ tags = [
 ]
 
 categories = [
-    "Laptop"
+    "Madu"
 ]
 
 author = "yanti"

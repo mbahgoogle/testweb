@@ -11,7 +11,7 @@ tags = [
 ]
 date = "2018-08-20"
 categories = [
-    "Laptop"
+    "Madu"
 ]
 author = "yanti"
 thumbnail = "https://cdn.thewirecutter.com/wp-content/uploads/2018/07/laptops-under-500-top-2x1-lowres1024-0029.jpg"
