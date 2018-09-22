@@ -30,14 +30,13 @@
          </div>
          
          
-  
 
         {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
 <br />
         <br />
         <br />
         <br />
-         <h2 class="h3"><a href="/laptops/" target="_blank">{{ $name | humanize }}</a><hr></h2>
+         <h2 class="h3"><a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}" target="_blank">{{ $name | humanize }}</a><hr></h2>
          <div class="row">                  
              
                {{ range first 4 $taxonomy.Pages.ByDate.Reverse}}

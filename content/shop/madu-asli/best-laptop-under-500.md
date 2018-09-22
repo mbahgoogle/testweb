@@ -1,6 +1,12 @@
 +++
 title = "(SHOP) The Best Laptop Under $500"
 description = ""
+
+price = "50.000"
+discount = "43.000"
+sku = ""
+buynow_text = "Lihat Produk"
+
 tags = [
     "Asus",
     "Sony",

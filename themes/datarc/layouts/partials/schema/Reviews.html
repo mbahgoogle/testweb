@@ -1,0 +1,25 @@
+<script type="application/ld+json">
+{
+ "@context": "http://schema.org/",
+ "@type": "Review",
+  "itemReviewed": {
+  "@type": "Thing",
+  "image": "{{ $.Params.thumbnail | absURL }}",
+  "name": "{{.Site.Title}}"
+ },
+ "reviewRating": {
+  “@type”: "Rating",
+  “ratingValue”: "5"
+ },
+ “name”: "{{.Title}}",
+  “author”: {
+  “@type”: "Person",
+  “name”: "{{ if isset .Params "author" }}{{ $author := index .Site.Data.authors .Params.author }}{{ $author.name }}{{ else }}Unknown{{ end }}"
+ },
+ “reviewBody”: "{{ .Description | default .Summary | truncate 160 }}",
+  “publisher”: {
+  “@type”: "Organization",
+  “name”: "{{.Site.Title}}"
+ }
+}
+</script>

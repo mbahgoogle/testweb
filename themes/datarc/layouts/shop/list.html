@@ -18,21 +18,54 @@
    </div>
 </section>	
 
+<main>
+    <article class="post">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-10 mx-auto">
+                    <div class="row wow fadeIn animated" style="visibility: visible; animation-name: fadeIn;">
+                     {{.Content}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+</main>
+
 <section class="section-full gray-bg">
    <div class="container">
-            shopsss
+      <div class="row justify-content-center">
+         <div class="col-lg-8">
+            <div class="product-area-title text-center">
+               <h3 class="h4">
+               Lihat juga Lainnya ...</h2>
+            </div>
+         </div>
+      </div>
       <div class="row">
-         {{ range .Pages }}
+        {{ if .Params.latestproduct }}
+         {{ partial "LatestProductShop" . }}
+        {{ end }}
+        
+         {{ range first 60 .Pages }}
          <div class="col-md-4">
             <figure class="signle-service">
 
-               <img src="{{ .Params.thumbnail | absURL }}" class="img-fluid" alt="{{.Title}}">
+               <img src="https://ce880219c.cloudimg.io/crop/200x150/x/{{ .Params.thumbnail | absURL }}" class="img-fluid" alt="{{.Title}}">
 
                <figcaption class="text-center">
-                  <h5 class="text-uppercase"><a href="{{.Permalink}}"> {{.Title}}</a></h5>
-                  <small>{{.Date.Format "2006-01-02"}} </small>
-                  <p>{{ .Summary | truncate 250 }}</p>
-                  <a href="{{ .Permalink }}" class="primary-btn d-inline-flex align-items-center">Continue Reading<span class="lnr lnr-arrow-right"></span></a>
+                  <h2 class="h5"><a href="{{.Permalink}}"> {{.Title}}</a></h2>
+                  <br />
+                  <p class="lead">
+                  <span>{{.Site.Params.currency}} <strong>{{ .Params.price }}</strong></span> - 
+                  <span class="mr-1">{{ if .Params.discount }}<del>{{ .Site.Params.currency }} <strong>{{ .Params.discount }}</strong> </del></span>{{end}}
+                  <div class="text-warning">
+                  <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                  </div>
+                  </p>
+
+                  <p>{{ .Summary }}</p>
+                  <a href="{{ .Permalink }}" class="primary-btn d-inline-flex align-items-center">{{ .Params.buynow_text }}<span class="lnr lnr-arrow-right"></span></a>
                </figcaption>
             </figure>
          </div>
@@ -41,8 +74,9 @@
    </div>
 </section>
 
-<div class="section-title text-center gray-bg">
-   {{ partial "pagination.html" . }}	
-</div>
 
 {{ partial "footer.html" . }}
+
+{{ partial "schema/Reviews.html" . }}
+</body>
+</html>

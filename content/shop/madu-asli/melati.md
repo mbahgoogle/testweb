@@ -1,6 +1,13 @@
 +++
-title = "The Best Laptops"
+title = "The Best Laptops for Video and Photo Editing"
 description = ""
+
+
+price = "50.000"
+discount = "43.000"
+sku = ""
+buynow_text = "Lihat Produk"
+
 tags = [
     "Asus",
     "Sony",
@@ -14,7 +21,7 @@ categories = [
     "Madu"
 ]
 author = "yanti"
-thumbnail = "https://cdn.thewirecutter.com/wp-content/uploads/2018/05/whichlaptop-lowres-1355-2-330x220.jpg"
+thumbnail = "https://cdn.thewirecutter.com/wp-content/uploads/2017/08/pro-laptop-lowres-2567-330x220.jpg"
 +++
 After researching hundreds of laptops and testing six, we found that 
 the Asus Chromebook Flip C302CA is the best laptop that costs less 

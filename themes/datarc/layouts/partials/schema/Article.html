@@ -3,7 +3,7 @@
   "@context": "http://schema.org",
   "@type": "Article",
   "author": {
-    "name" : "{{ if isset .Params "author" }} {{ $author := index .Site.Data.authors .Params.author }}{{ $author.name }} {{ else }}Unknown {{ end }}"
+    "name" : "{{ if isset .Params "author" }}{{ $author := index .Site.Data.authors .Params.author }}{{ $author.name }}{{ else }}Unknown{{ end }}"
   },
   "headline": "{{ .Title }}",
   "description": "{{ .Params.description }}",

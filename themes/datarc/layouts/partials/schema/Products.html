@@ -1,0 +1,22 @@
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org/",
+    "@type": "Product",
+    "name": "{{ .Title }}",
+    "image": "{{ with .Params.thumbnail }}{{ . | absURL }}{{ end }}",
+    "description": "{{ .Params.description }}",
+    "sku": “{{.Site.Params.sku}}",
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4",
+        "reviewCount": "1,987"
+    },
+    "offers": {
+        "@type": "Offer",
+        "priceCurrency": "{{.Site.Params.currency}}",
+        "price": "{{ .Params.price }}",
+        "availability": "http://schema.org/InStock"
+    }
+}
+
+</script>

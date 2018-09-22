@@ -1,0 +1,24 @@
+
+{{ range where .Site.Pages.ByPublishDate.Reverse "Section" "shop" }}
+	<div class="col-md-4">
+            <figure class="signle-service">
+
+               <img src="https://ce880219c.cloudimg.io/crop/200x150/x/{{ .Params.thumbnail | absURL }}" class="img-fluid" alt="{{.Title}}">
+
+               <figcaption class="text-center">
+                  <h2 class="h5"><a href="{{.Permalink}}"> {{.Title}}</a></h2>
+                  <br />
+                  <p class="lead">
+                  <span>{{.Site.Params.currency}} <strong>{{ .Params.price }}</strong></span> - 
+                  <span class="mr-1">{{ if .Params.discount }}<del>{{ .Site.Params.currency }} <strong>{{ .Params.discount }}</strong> </del></span>{{end}}
+                  <div class="text-warning">
+                  <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                  </div>
+                  </p>
+
+                  <p>{{ .Summary }}</p>
+                  <a href="{{ .Permalink }}" class="primary-btn d-inline-flex align-items-center">{{ .Params.buynow_text }}<span class="lnr lnr-arrow-right"></span></a>
+               </figcaption>
+            </figure>
+         </div>
+         {{ end }}

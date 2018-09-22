@@ -11,7 +11,10 @@ category = "categories"
 page = ["HTML", "AMP", "RSS"]
 
 [params]
-  logo = "/logo-marketherbal.png"
+  logo = "/logo.png"
   
   brand_color = "rgba(91, 97, 207, 0.95)"
   second_color = "rgba(60, 64, 143, 0.95)"
+ 
+  ## shop
+  currency = "IDR"

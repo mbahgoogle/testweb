@@ -2,6 +2,12 @@
 title = "lorem ipsum dolor sit amet"
 description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet libero eget ligula aliquet pretium non eget turpis."
 
+
+price = "50.000"
+discount = "43.000"
+sku = ""
+buynow_text = "Lihat Produk"
+
 tags = [
     "Asus",
     "Sony",
